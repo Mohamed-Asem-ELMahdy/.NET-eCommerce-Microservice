@@ -9,7 +9,7 @@ namespace eCommerce.SharedLibrary.DI;
 
 public static class SharedServiceContainer
 {
-    public static IServiceCollection AddSharedServices<TContext>(
+    public static IServiceCollection AddInfrastructureServices<TContext>(
         this IServiceCollection services,
         IConfiguration configuration,
         string connectionStringName) where TContext : DbContext

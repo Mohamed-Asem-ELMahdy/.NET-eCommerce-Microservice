@@ -13,5 +13,5 @@ public static class ProductsSerialization
     public static IEnumerable<Product> ToEntities(this IEnumerable<ProductDTO> productDtos)
     {
         return productDtos.Select(dto => dto.ToEntity());
-    }
+    } 
 }

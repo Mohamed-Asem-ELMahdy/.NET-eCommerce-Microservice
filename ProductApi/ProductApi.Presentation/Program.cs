@@ -14,11 +14,15 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 
+
+
 // Configure the HTTP request pipeline.
-    app.UseSwagger();
-    app.UseSwaggerUI();
-// Use Shared Middleware (Global Exception, API Gateway, Authentication, Authorization)
-app.UseSharedMiddleware();
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// Use Infrastructure Middleware (Global Exception, API Gateway, Authentication, Authorization)
+// This enforces API Gateway-only access for all endpoints
+//app.UseInfrastructureMiddlewares();
 
 app.UseHttpsRedirection();
 

@@ -26,10 +26,9 @@ public static class ServiceContainer
 
     public static IApplicationBuilder UseInfrastructureMiddlewares(this IApplicationBuilder app)
     {
-        // Use Shared Middleware
-        // shared Authentication 
-        // listen only to API Gateway
-        
+        // Use Shared Middleware (Global Exception, API Gateway Authentication, Authorization)
+        // This enforces that ALL requests must come through the API Gateway with proper headers
+        // Direct API calls without Api-Gateway header will be rejected with 503 Service Unavailable
         app.UseSharedMiddleware();
         return app;
     }
